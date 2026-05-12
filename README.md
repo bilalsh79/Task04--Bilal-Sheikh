@@ -6,8 +6,7 @@ This project features an interactive, single-page executive dashboard designed t
 
 While top-line revenue appears strong ($1.26M), this dashboard was specifically engineered to highlight a critical business emergency: severe operational leakage, with over 41% of all orders resulting in cancellations or returns. 
 
-![Dashboard Preview](dashboard.png)
-
+![Dashboard Preview](Project%204/dashboard.png)
 ## The "So What?" (Core Business Insight)
 The primary objective of this visualization is to guide executive action. The dashboard successfully communicates that while the company is highly effective at top-of-funnel marketing and capturing high-ticket sales (AOV: $1,054), post-purchase friction is heavily suppressing realized revenue. The data suggests that next quarter's priority should pivot from acquisition to investigating supply chain and product quality.
 
