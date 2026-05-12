@@ -1,0 +1,239 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; }
+  .dash { padding: 1.5rem 1.25rem; background: transparent; }
+  .header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 0.5px solid var(--color-border-tertiary); padding-bottom: 1rem; }
+  .header-left h1 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; color: var(--color-text-primary); letter-spacing: -0.3px; }
+  .header-left p { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+  .badge { background: #E6F1FB; color: #185FA5; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 99px; margin-top: 6px; display: inline-block; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1.25rem; }
+  .kpi { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 14px 16px; }
+  .kpi-label { font-size: 11px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .kpi-val { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
+  .kpi-sub { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+  .kpi-pill { font-size: 11px; padding: 2px 7px; border-radius: 99px; display: inline-block; margin-top: 3px; }
+  .pill-green { background: #EAF3DE; color: #3B6D11; }
+  .pill-amber { background: #FAEEDA; color: #854F0B; }
+  .row2 { display: grid; grid-template-columns: 1.6fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 16px; }
+  .card-title { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; font-size: 11px; color: var(--color-text-secondary); }
+  .legend span { display: flex; align-items: center; gap: 4px; }
+  .dot { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+  .status-bars { display: flex; flex-direction: column; gap: 8px; }
+  .sbar-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+  .sbar-label { width: 68px; color: var(--color-text-secondary); flex-shrink: 0; }
+  .sbar-track { flex: 1; height: 8px; background: var(--color-background-secondary); border-radius: 4px; overflow: hidden; }
+  .sbar-fill { height: 100%; border-radius: 4px; }
+  .sbar-val { width: 30px; text-align: right; color: var(--color-text-primary); font-weight: 500; font-size: 11px; }
+  .ref-rows { display: flex; flex-direction: column; gap: 7px; }
+  .ref-row { display: flex; align-items: center; justify-content: space-between; font-size: 12px; }
+  .ref-name { color: var(--color-text-secondary); }
+  .ref-bar-wrap { flex: 1; margin: 0 8px; height: 6px; background: var(--color-background-secondary); border-radius: 3px; overflow: hidden; }
+  .ref-bar-fill { height: 100%; border-radius: 3px; background: #378ADD; }
+  .ref-val { color: var(--color-text-primary); font-weight: 500; font-size: 11px; }
+  .footer { font-size: 11px; color: var(--color-text-secondary); text-align: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 0.5px solid var(--color-border-tertiary); }
+</style>
+
+<div class="dash">
+  <div class="header">
+    <div class="header-left">
+      <h1>Sales Performance Dashboard</h1>
+      <p>E-Commerce Operations · Jan 2023 – Jun 2025 · 1,200 orders analysed</p>
+      <span class="badge">Executive Summary</span>
+    </div>
+    <div style="font-size:11px; color:var(--color-text-secondary); text-align:right; line-height:1.6;">
+      Prepared for<br><strong style="color:var(--color-text-primary); font-size:12px;">Technology Director</strong>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Total Revenue</div>
+      <div class="kpi-val">$1.26M</div>
+      <div class="kpi-sub">Across all product lines</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Total Orders</div>
+      <div class="kpi-val">1,200</div>
+      <div class="kpi-sub">30-month period</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg. Order Value</div>
+      <div class="kpi-val">$1,054</div>
+      <div class="kpi-sub">Per transaction</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Fulfilment Rate</div>
+      <div class="kpi-val">38.8%</div>
+      <div class="kpi-sub">Shipped + Delivered</div>
+      <span class="kpi-pill pill-amber">Needs attention</span>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="card">
+      <div class="card-title">Monthly Revenue Trend — Jan 2023 to Jun 2025</div>
+      <div style="position:relative; width:100%; height:210px;">
+        <canvas id="trendChart" role="img" aria-label="Line chart of monthly revenue from January 2023 to June 2025">Monthly revenue ranged from approximately $27K to $68K across 30 months.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Revenue by Product Category</div>
+      <div class="legend" id="prodLegend"></div>
+      <div style="position:relative; width:100%; height:185px;">
+        <canvas id="prodChart" role="img" aria-label="Doughnut chart of revenue by product category">Chair and Printer lead at roughly $196K each, followed by Laptop, Tablet, Monitor, Desk, and Phone.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="row3">
+    <div class="card">
+      <div class="card-title">Order Status Breakdown</div>
+      <div class="status-bars" id="statusBars"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Referral Channel Performance</div>
+      <div class="ref-rows" id="refBars"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Payment Method Distribution</div>
+      <div style="position:relative; width:100%; height:150px;">
+        <canvas id="payChart" role="img" aria-label="Horizontal bar chart of revenue by payment method">Credit Card and Online are the top payment methods, each contributing over $260K.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+    <div class="card">
+      <div class="card-title">Units Sold by Product</div>
+      <div style="position:relative; width:100%; height:180px;">
+        <canvas id="unitChart" role="img" aria-label="Bar chart showing units sold per product category">Chair leads with 562 units, followed by Printer 542 and Laptop 535.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Coupon Code Usage vs. Revenue</div>
+      <div style="position:relative; width:100%; height:180px;">
+        <canvas id="couponChart" role="img" aria-label="Bar chart showing revenue generated per coupon code">FREESHIP generated the most revenue at $335K, followed by No Coupon at $322K.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Data source: Cleaned_Dataset.xlsx · DecodeLabs Industrial Training Kit — Project 4 · Confidential</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const gridC = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)';
+const textC = isDark ? '#aaa' : '#666';
+
+const months = ['Jan-23','Feb-23','Mar-23','Apr-23','May-23','Jun-23','Jul-23','Aug-23','Sep-23','Oct-23','Nov-23','Dec-23','Jan-24','Feb-24','Mar-24','Apr-24','May-24','Jun-24','Jul-24','Aug-24','Sep-24','Oct-24','Nov-24','Dec-24','Jan-25','Feb-25','Mar-25','Apr-25','May-25','Jun-25'];
+const revenue = [56686,40118,48609,27752,63837,49500,42821,54352,29527,52608,43080,43755,38528,36910,36031,49613,27909,68069,42964,31991,39795,37227,32414,38786,29099,35318,39201,31821,43397,53047];
+
+new Chart(document.getElementById('trendChart'), {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [{
+      label: 'Monthly Revenue',
+      data: revenue,
+      borderColor: '#185FA5',
+      backgroundColor: 'rgba(55,138,221,0.08)',
+      borderWidth: 2,
+      pointRadius: 2,
+      pointHoverRadius: 5,
+      fill: true,
+      tension: 0.35
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: v => '$' + Math.round(v.raw).toLocaleString() } } },
+    scales: {
+      x: { ticks: { color: textC, font: { size: 9 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 10 }, grid: { color: gridC } },
+      y: { ticks: { color: textC, font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'K' }, grid: { color: gridC } }
+    }
+  }
+});
+
+const prodColors = ['#185FA5','#1D9E75','#D85A30','#BA7517','#A32D2D','#533AB7','#5F5E5A'];
+const prodLabels = ['Chair','Printer','Laptop','Tablet','Monitor','Desk','Phone'];
+const prodData = [195620,195613,192127,186569,175651,167460,151722];
+const legend = document.getElementById('prodLegend');
+prodLabels.forEach((l,i) => {
+  const pct = ((prodData[i]/prodData.reduce((a,b)=>a+b,0))*100).toFixed(1);
+  legend.innerHTML += `<span><span class="dot" style="background:${prodColors[i]}"></span>${l} ${pct}%</span>`;
+});
+new Chart(document.getElementById('prodChart'), {
+  type: 'doughnut',
+  data: { labels: prodLabels, datasets: [{ data: prodData, backgroundColor: prodColors, borderWidth: 2, borderColor: isDark ? '#1a1a1a' : '#fff' }] },
+  options: { responsive: true, maintainAspectRatio: false, cutout: '60%', plugins: { legend: { display: false }, tooltip: { callbacks: { label: v => ' $' + Math.round(v.raw).toLocaleString() } } } }
+});
+
+const statuses = [['Cancelled',250,'#E24B4A'],['Returned',247,'#EF9F27'],['Pending',237,'#378ADD'],['Shipped',235,'#1D9E75'],['Delivered',231,'#639922']];
+const sb = document.getElementById('statusBars');
+statuses.forEach(([name,count,color]) => {
+  sb.innerHTML += `<div class="sbar-row"><span class="sbar-label">${name}</span><div class="sbar-track"><div class="sbar-fill" style="width:${(count/250*100).toFixed(0)}%;background:${color}"></div></div><span class="sbar-val">${count}</span></div>`;
+});
+
+const refs = [['Instagram',275285],['Email',261809],['Google',250441],['Facebook',250411],['Referral',226816]];
+const rb = document.getElementById('refBars');
+refs.forEach(([name,val]) => {
+  const pct = (val/275285*100).toFixed(0);
+  rb.innerHTML += `<div class="ref-row"><span class="ref-name">${name}</span><div class="ref-bar-wrap"><div class="ref-bar-fill" style="width:${pct}%"></div></div><span class="ref-val">$${(val/1000).toFixed(0)}K</span></div>`;
+});
+
+new Chart(document.getElementById('payChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Credit Card','Online','Cash','Gift Card','Debit Card'],
+    datasets: [{ data: [263848,262443,259786,246324,232361], backgroundColor: ['#185FA5','#1D9E75','#BA7517','#533AB7','#888780'], borderRadius: 4, borderSkipped: false }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: v => '$' + Math.round(v.raw).toLocaleString() } } },
+    scales: {
+      x: { ticks: { color: textC, font: { size: 10 }, callback: v => '$'+(v/1000).toFixed(0)+'K' }, grid: { color: gridC } },
+      y: { ticks: { color: textC, font: { size: 11 } }, grid: { display: false } }
+    }
+  }
+});
+
+new Chart(document.getElementById('unitChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Chair','Printer','Laptop','Desk','Tablet','Monitor','Phone'],
+    datasets: [{ data: [562,542,535,508,497,480,411], backgroundColor: '#378ADD', borderRadius: 4 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: v => v.raw + ' units' } } },
+    scales: {
+      x: { ticks: { color: textC, font: { size: 10 } }, grid: { display: false } },
+      y: { ticks: { color: textC, font: { size: 10 } }, grid: { color: gridC } }
+    }
+  }
+});
+
+new Chart(document.getElementById('couponChart'), {
+  type: 'bar',
+  data: {
+    labels: ['FREESHIP','No Coupon','SAVE10','WINTER15'],
+    datasets: [{ data: [335037,322401,304840,302484], backgroundColor: ['#1D9E75','#888780','#BA7517','#185FA5'], borderRadius: 4 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: v => '$' + Math.round(v.raw).toLocaleString() } } },
+    scales: {
+      x: { ticks: { color: textC, font: { size: 10 } }, grid: { display: false } },
+      y: { ticks: { color: textC, font: { size: 10 }, callback: v => '$'+(v/1000).toFixed(0)+'K' }, grid: { color: gridC } }
+    }
+  }
+});
+</script>
